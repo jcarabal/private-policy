@@ -84,6 +84,13 @@
             margin-bottom: 0.5rem;
             color: var(--text);
         }
+        .note {
+            background: rgba(94, 234, 212, 0.1);
+            border-left: 3px solid var(--accent);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+        }
         .footer {
             margin-top: 3rem;
             padding-top: 1rem;
@@ -103,66 +110,162 @@
         
         <div class="content">
             <h1>Privacy Policy</h1>
-            <p class="meta">Last Updated: November 17, 2025</p>
+            <p class="meta">Last Updated: November 14, 2025</p>
             
-            <h2>1. Information We Collect</h2>
-            <p>VaultTrak collects and processes the following types of information:</p>
+            <div class="note">
+                <strong>Privacy-First Promise:</strong> VaultTrak is designed with your privacy as the top priority. We do NOT collect, store, or access your data on external servers. Everything stays on your device, under your control.
+            </div>
+            
+            <h2>1. Our Privacy-First Approach</h2>
+            <p>VaultTrak is built on the following privacy principles:</p>
             <ul>
-                <li><strong>Account Information:</strong> Email address, name, and authentication credentials</li>
-                <li><strong>Time Tracking Data:</strong> Project names, task descriptions, time entries, and associated metadata</li>
-                <li><strong>Device Information:</strong> Device type, operating system, and app version</li>
-                <li><strong>Usage Data:</strong> App interactions, feature usage, and performance metrics</li>
+                <li><strong>No External Data Collection:</strong> We do not collect, store, or access your data on any external servers</li>
+                <li><strong>Local Storage Only:</strong> All your data is stored exclusively on your device</li>
+                <li><strong>Optional iCloud Sync:</strong> If you choose to enable iCloud sync, data is synced through your personal Apple account (not our servers)</li>
+                <li><strong>No Tracking:</strong> We do not use third-party analytics, advertising networks, or tracking technologies</li>
+                <li><strong>No Data Sharing:</strong> We never sell, rent, or share your personal data with third parties</li>
             </ul>
             
-            <h2>2. How We Use Your Information</h2>
-            <p>We use the collected information to:</p>
+            <h2>2. Data We Store (Locally on Your Device)</h2>
+            <p>VaultTrak stores the following information locally on your device:</p>
             <ul>
-                <li>Provide and maintain the VaultTrak service</li>
-                <li>Sync your time tracking data across devices</li>
-                <li>Improve app performance and user experience</li>
-                <li>Send important service notifications</li>
-                <li>Provide customer support</li>
+                <li><strong>Career Information:</strong> Job applications, employment history, skills, certifications, and career goals</li>
+                <li><strong>Financial Information:</strong> Bills, payments, transactions, receipts, and expense tracking</li>
+                <li><strong>Personal Content:</strong> Notes, journal entries, voice memos, and photos you add to the app</li>
+                <li><strong>Schedule Information:</strong> Interview appointments, reminders, deadlines, and calendar events</li>
+                <li><strong>Profile Information:</strong> Your name, contact information, and profile photo (if provided)</li>
+                <li><strong>Time Tracking Data:</strong> Time entries, project details, and work logs</li>
             </ul>
+            <p><strong>Important:</strong> All this data is stored locally on your device using Apple's SwiftData framework. VaultTrak does not have access to this data on any external servers.</p>
             
             <h2>3. Data Storage and Security</h2>
-            <p>Your data is encrypted both in transit and at rest. We implement industry-standard security measures including:</p>
+            <h3>Local Storage</h3>
+            <p>Your data is encrypted and stored locally on your device using Apple's SwiftData framework, which provides:</p>
             <ul>
-                <li>End-to-end encryption for sensitive data</li>
-                <li>Secure cloud storage with regular backups</li>
-                <li>Two-factor authentication support</li>
-                <li>Regular security audits and updates</li>
+                <li><strong>Encryption:</strong> Data is encrypted at rest using Apple's security infrastructure</li>
+                <li><strong>Sandboxing:</strong> App data is isolated and protected by iOS/macOS security</li>
+                <li><strong>Device Security:</strong> Protected by your device's passcode, Face ID, or Touch ID</li>
             </ul>
             
-            <h2>4. Data Sharing</h2>
-            <p>We do not sell your personal information. We may share data only in the following circumstances:</p>
+            <h3>Optional iCloud Sync</h3>
+            <p>If you enable iCloud sync (optional), your data is:</p>
             <ul>
-                <li>With your explicit consent</li>
-                <li>To comply with legal obligations</li>
-                <li>With service providers who assist in app operations (under strict confidentiality agreements)</li>
+                <li><strong>Synced via iCloud:</strong> Data syncs through your personal Apple iCloud account</li>
+                <li><strong>Encrypted in Transit:</strong> Data is encrypted during transmission to/from iCloud</li>
+                <li><strong>Encrypted at Rest:</strong> Data is encrypted while stored in your iCloud account</li>
+                <li><strong>Apple-Managed:</strong> iCloud storage and security is managed by Apple, not VaultTrak</li>
+                <li><strong>Your Control:</strong> You can disable iCloud sync anytime in app settings</li>
             </ul>
             
-            <h2>5. Your Rights</h2>
-            <p>You have the right to:</p>
+            <div class="note">
+                <strong>Note:</strong> When using iCloud sync, your data is subject to Apple's iCloud Terms of Service and Privacy Policy. VaultTrak does not have access to your iCloud data.
+            </div>
+            
+            <h3>Additional Security Features</h3>
             <ul>
-                <li>Access your personal data</li>
-                <li>Request data correction or deletion</li>
-                <li>Export your data in a portable format</li>
-                <li>Opt-out of non-essential data collection</li>
-                <li>Close your account at any time</li>
+                <li><strong>Face ID / Touch ID:</strong> Optional biometric authentication for app access</li>
+                <li><strong>PIN Protection:</strong> Optional PIN code for securing the app</li>
+                <li><strong>Auto-Lock:</strong> Configurable timeout to automatically lock the app</li>
             </ul>
             
-            <h2>6. Data Retention</h2>
-            <p>We retain your data as long as your account is active. Upon account deletion, we will delete or anonymize your data within 30 days, except where retention is required by law.</p>
+            <h2>4. Third-Party Services (Apple Only)</h2>
+            <p>VaultTrak integrates only with Apple's native services and frameworks. We do not use third-party analytics, advertising, or tracking services.</p>
             
-            <h2>7. Children's Privacy</h2>
-            <p>VaultTrak is not intended for users under 13 years of age. We do not knowingly collect information from children.</p>
+            <h3>Apple Services We Use:</h3>
+            <ul>
+                <li><strong>iCloud:</strong> Optional cloud sync (requires your permission and iCloud account)</li>
+                <li><strong>StoreKit:</strong> For processing subscription purchases through Apple</li>
+                <li><strong>Apple Calendar:</strong> Optional integration for importing/exporting events (requires permission)</li>
+                <li><strong>Apple Reminders:</strong> Optional integration for task management (requires permission)</li>
+                <li><strong>Apple Notes:</strong> Optional integration for note-taking (requires permission)</li>
+                <li><strong>Apple Contacts:</strong> Optional access for contact information (requires permission)</li>
+                <li><strong>VisionKit:</strong> For scanning receipts and documents using device camera</li>
+                <li><strong>PhotoKit:</strong> For accessing photos you choose to add (requires permission)</li>
+            </ul>
             
-            <h2>8. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last Updated" date.</p>
+            <p><strong>Important:</strong> All these integrations are optional and require your explicit permission. You can revoke permissions anytime in iOS/macOS Settings.</p>
             
-            <h2>9. Contact Us</h2>
-            <p>If you have questions about this Privacy Policy, please contact us at:</p>
-            <p><strong>Email:</strong> privacy@vaulttrak.com</p>
+            <h2>5. What We Do NOT Do</h2>
+            <p>To be completely transparent, here's what VaultTrak does NOT do:</p>
+            <ul>
+                <li>❌ We do NOT collect data on external servers</li>
+                <li>❌ We do NOT use analytics or tracking services</li>
+                <li>❌ We do NOT sell or share your data with third parties</li>
+                <li>❌ We do NOT use advertising networks or show ads</li>
+                <li>❌ We do NOT access your data remotely</li>
+                <li>❌ We do NOT use AI services that process your data externally</li>
+                <li>❌ We do NOT require account creation or login</li>
+                <li>❌ We do NOT track your location</li>
+                <li>❌ We do NOT collect usage statistics</li>
+            </ul>
+            
+            <h2>6. Your Rights and Data Control</h2>
+            <p>You have complete control over your data:</p>
+            <ul>
+                <li><strong>Access:</strong> All your data is accessible directly in the app</li>
+                <li><strong>Edit:</strong> You can edit or correct any information anytime</li>
+                <li><strong>Delete:</strong> You can delete any data or all data instantly in the app</li>
+                <li><strong>Export:</strong> Export your data in PDF or CSV format for backup or migration</li>
+                <li><strong>Control Sync:</strong> Enable or disable iCloud sync at any time</li>
+                <li><strong>Revoke Permissions:</strong> Remove app permissions for Calendar, Photos, etc. in device Settings</li>
+                <li><strong>No Account Required:</strong> No login or account creation means nothing to "delete" from our servers</li>
+            </ul>
+            
+            <h2>7. Data Retention and Deletion</h2>
+            <p>Your data remains on your device as long as you keep the app installed:</p>
+            <ul>
+                <li><strong>Local Data:</strong> Stored on your device until you delete it or uninstall the app</li>
+                <li><strong>iCloud Data:</strong> If sync is enabled, data remains in your iCloud account according to Apple's policies</li>
+                <li><strong>Complete Deletion:</strong> When you delete the app, all local data is removed from your device</li>
+                <li><strong>iCloud Deletion:</strong> To delete iCloud data, disable sync and delete the data from iCloud Settings</li>
+            </ul>
+            
+            <p><strong>Important:</strong> Since we don't store your data on our servers, there's nothing for us to delete when you stop using the app. Simply delete the app from your device to remove all local data.</p>
+            
+            <h2>8. Permissions and Access</h2>
+            <p>VaultTrak may request the following permissions (all optional):</p>
+            <ul>
+                <li><strong>Camera:</strong> For scanning receipts and documents</li>
+                <li><strong>Photos:</strong> For attaching images to entries</li>
+                <li><strong>Calendar:</strong> For syncing interview appointments and deadlines</li>
+                <li><strong>Reminders:</strong> For task management integration</li>
+                <li><strong>Contacts:</strong> For adding contact information to job applications</li>
+                <li><strong>Notifications:</strong> For reminders and alerts</li>
+            </ul>
+            <p>You can grant or revoke any of these permissions at any time in your device Settings. The app functions without these permissions, though some features may be unavailable.</p>
+            
+            <h2>9. Children's Privacy</h2>
+            <p>VaultTrak is not intended for users under 13 years of age. We do not knowingly collect information from children. Since all data is stored locally on the device, parents should monitor their children's device usage.</p>
+            
+            <h2>10. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in:</p>
+            <ul>
+                <li>App features and functionality</li>
+                <li>Legal or regulatory requirements</li>
+                <li>Privacy best practices</li>
+            </ul>
+            <p>Changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this policy periodically.</p>
+            
+            <h2>11. Legal Compliance</h2>
+            <p>While VaultTrak does not collect data on external servers, we may be required to comply with legal obligations:</p>
+            <ul>
+                <li>We may be required to provide information if compelled by law enforcement with proper legal process</li>
+                <li>However, since we don't have access to your data stored locally or in your iCloud, we cannot provide what we don't have</li>
+                <li>Any legal requests would need to be directed to Apple for iCloud data</li>
+            </ul>
+            
+            <h2>12. International Users</h2>
+            <p>VaultTrak is available worldwide. Your data stays on your device regardless of your location. If you use iCloud sync, your data is stored in Apple's iCloud infrastructure according to Apple's data residency policies.</p>
+            
+            <h2>13. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy or your data, please contact us:</p>
+            <p><strong>Content Vault</strong><br>
+            <strong>Email:</strong> vvault@contentvaultmanager.com</p>
+            <p>You can also access support through the app: More tab → Settings → Support</p>
+            
+            <div class="note">
+                <strong>Privacy Summary:</strong> VaultTrak is designed to keep your data private and secure on your device. We don't collect, access, or store your data on external servers. You have complete control over your information at all times.
+            </div>
         </div>
         
         <div class="footer">
