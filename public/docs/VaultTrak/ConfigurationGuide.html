@@ -129,10 +129,80 @@
             <h1>Configuration Guide</h1>
             <p class="meta">Version 1.0 - Last Updated: November 17, 2025</p>
             
-            <h2>Getting Started</h2>
-            <p>Welcome to VaultTrak! This guide will help you configure the app for optimal performance and customize it to your workflow.</p>
+            <h2>VaultTrak Resume Optimizer — Setup & Configuration</h2>
             
-            <h2>1. Initial Setup</h2>
+            <h3>What It Does</h3>
+            <p>The Resume Optimizer rewrites your resume bullets by calling a compatible LLM server (LangChain MLS or similar). <strong>VaultTrak does not ship an LLM</strong>; you bring your own endpoint.</p>
+            
+            <h3>Requirements</h3>
+            <p>Before using the Resume Optimizer, you need:</p>
+            <ul>
+                <li>A reachable LLM API (e.g., LangChain MLS) running on your LAN or internet</li>
+                <li><strong>Base URL</strong> to the API (e.g., <code>http://192.168.1.10:8000/v1/</code> or your HTTPS host)</li>
+                <li><strong>API key</strong> (if your server requires authentication)</li>
+                <li><strong>Model identifier</strong> exposed by your server (e.g., <code>llama-3.1-8b-instruct</code>)</li>
+                <li><strong>(Optional)</strong> Embedding model identifier if you enable reranking (e.g., <code>nomic-embed-text-v1</code>)</li>
+            </ul>
+            
+            <h3>Quick Start</h3>
+            <ol>
+                <li>Start your LLM server (LangChain MLS or compatible) on a machine the device can reach</li>
+                <li>Note the <strong>Base URL</strong> and <strong>API key</strong> and which model IDs are served</li>
+                <li>On your device, open <strong>Resume Optimizer → Runtime Configuration</strong>:
+                    <ul>
+                        <li><strong>Base URL:</strong> enter your server URL (include protocol; no trailing spaces)</li>
+                        <li><strong>API Key:</strong> enter your bearer token if required</li>
+                        <li><strong>LLM Model:</strong> enter the model identifier your server serves</li>
+                        <li><strong>Embeddings:</strong> toggle on/off; if on, enter the embedding model ID your server serves</li>
+                    </ul>
+                </li>
+                <li>Enter <strong>Target Role</strong> and <strong>Job Description</strong>, then tap <strong>Run</strong></li>
+            </ol>
+            
+            <h3>Field Reference</h3>
+            <div class="code-block">
+<strong>Base URL:</strong> Full endpoint root
+Example: http://&lt;host&gt;:8000/v1/
+
+<strong>API Key:</strong> Bearer token if your server enforces auth
+Leave empty if not required
+
+<strong>LLM Model Identifier:</strong> Name your server exposes for text generation
+Example: llama-3.1-8b-instruct
+
+<strong>Embedding Model Identifier:</strong> Only needed if reranking is enabled
+Example: nomic-embed-text-v1
+            </div>
+            
+            <h3>Troubleshooting</h3>
+            <ul>
+                <li><strong>401/403 Unauthorized:</strong> Wrong/missing API key or your server doesn't expect the auth header</li>
+                <li><strong>Connection errors:</strong> Device can't reach the host (Wi‑Fi/VPN/firewall). Verify Base URL and connectivity</li>
+                <li><strong>HTML error page shown:</strong> The server returned an error (often 403). Check auth and URL</li>
+                <li><strong>Empty output:</strong> Server is up but the model isn't loaded or the model ID is wrong</li>
+            </ul>
+            
+            <div class="note">
+                <strong>Important Notes:</strong><br>
+                • Data flows to your configured LLM endpoint; no offline model is bundled<br>
+                • Use HTTPS and strong API keys for remote endpoints<br>
+                • If you switch servers or rotate keys, update Base URL/API Key in the Runtime Configuration
+            </div>
+            
+            <h2>Support</h2>
+            <p>Need more help? Contact our support team:</p>
+            <ul>
+                <li><strong>Email:</strong> vvault@contentvaultmanager.com</li>
+                <li><strong>In-app:</strong> More tab → Settings → Support</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            © 2025 VaultTrak. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
             
             <h3>1.1 Create Your Account</h3>
             <ol>
