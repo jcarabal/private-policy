@@ -38,14 +38,16 @@ import FooterSection from './components/FooterSection.vue'
           />
           
           <AppCard
-            title="Project Alpha"
-            description="Next-gen project management"
-            :links="['More info coming soon']"
+            title="Porch Plates"
+            description="Local home-cooked meal marketplace and family meal planning"
+            :links="[
+              { label: 'Privacy Policy', url: '/contentvault_app-docs/docs/PorchPlates/PrivacyPolicy.html' }
+            ]"
           />
           
           <AppCard
-            title="Project Beta"
-            description="More apps coming soon"
+            title="More Coming Soon"
+            description="Additional apps in development"
             :links="['More apps coming soon']"
             :is-beta="true"
           />
