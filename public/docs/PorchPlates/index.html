@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Porch Plates - Local food marketplace and family meal planning app. Discover homemade meals, sell your culinary creations, and plan family dinners together.">
+    <meta name="keywords" content="local food, meal planning, family meals, home chef, food marketplace, homemade meals">
+    <title>Porch Plates - Local Food & Family Meals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .header .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .mode-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 60px 20px;
+            margin: 60px 0;
+        }
+        
+        .mode-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .mode-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .mode-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+        
+        .mode-card ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .mode-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .mode-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .pricing-section {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        
+        .pricing-card:hover {
+            border-color: #667eea;
+            transform: scale(1.02);
+        }
+        
+        .pricing-card.featured {
+            border-color: #667eea;
+            position: relative;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #667eea;
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            margin: 20px 0;
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
+        }
+        
+        .security-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+        }
+        
+        .security-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        
+        .security-item {
+            padding: 20px;
+        }
+        
+        .security-item h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .features-grid,
+            .mode-cards,
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🍽️ Porch Plates</h1>
+        <p class="tagline">Local Food & Family Meals</p>
+        <p class="subtitle">Discover homemade meals, sell your culinary creations, and plan family dinners together—all in one beautifully designed app.</p>
+        <div>
+            <a href="#features" class="cta-button">Learn More</a>
+            <a href="Support.html" class="cta-button secondary">Contact Us</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="features" class="section">
+            <h2 class="section-title">Why Choose Porch Plates?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏪</div>
+                    <h3>Local Marketplace</h3>
+                    <p>Connect with talented home chefs in your community. Browse homemade meals, baked goods, and specialty items—all made with love.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3>Sell Your Creations</h3>
+                    <p>Turn your kitchen into a business. Create beautiful listings, manage orders, track revenue, and build your customer base.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Family Meal Planning</h3>
+                    <p>Collaborate on weekly meal plans, vote on dinner options, share recipes, and automatically generate shopping lists.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>AES-256 encryption, secure authentication, and COPPA-compliant child accounts. Your data is safe with us.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Beautiful Design</h3>
+                    <p>Built with SwiftUI for iOS 17+. Intuitive interface, real-time updates, and offline capabilities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Smart Notifications</h3>
+                    <p>Stay updated with order status changes, family messages, meal votes, and new additions to your meal plans.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="mode-section">
+        <div class="container">
+            <h2 class="section-title">Three Powerful Modes, One App</h2>
+            <div class="mode-cards">
+                <div class="mode-card">
+                    <h3>🛒 Buyer Mode</h3>
+                    <p>Discover and order from local home chefs</p>
+                    <ul>
+                        <li>Browse curated marketplace</li>
+                        <li>Search and filter by categories</li>
+                        <li>Follow favorite sellers with PINs</li>
+                        <li>Track order status in real-time</li>
+                        <li>View detailed product info</li>
+                        <li>Maintain complete order history</li>
+                    </ul>
+                </div>
+                <div class="mode-card">
+                    <h3>👨‍🍳 Seller Mode</h3>
+                    <p>Build your culinary business from home</p>
+                    <ul>
+                        <li>4-step listing wizard</li>
+                        <li>Unique 5-digit seller PIN</li>
+                        <li>Real-time order management</li>
+                        <li>Revenue tracking dashboard</li>
+                        <li>Set store hours and availability</li>
+                        <li>Update order statuses instantly</li>
+                    </ul>
+                </div>
+                <div class="mode-card">
+                    <h3>👨‍👩‍👧‍👦 Family Mode</h3>
+                    <p>Collaborative meal planning made fun</p>
+                    <ul>
+                        <li>Weekly calendar view (Mon-Sun)</li>
+                        <li>Vote on meal choices together</li>
+                        <li>Browse and save recipes</li>
+                        <li>Family chat and messaging</li>
+                        <li>Auto-generate shopping lists</li>
+                        <li>Secure child accounts (COPPA)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing-section">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Free</h3>
+                    <p class="price">$0<span class="price-period">/month</span></p>
+                    <ul>
+                        <li>Full buyer access</li>
+                        <li>Basic seller features</li>
+                        <li>Up to 5 family members</li>
+                        <li>Standard support</li>
+                    </ul>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Popular</div>
+                    <h3>Premium Seller</h3>
+                    <p class="price">$4.99<span class="price-period">/month</span></p>
+                    <ul>
+                        <li>Featured listings</li>
+                        <li>Advanced analytics</li>
+                        <li>Priority support</li>
+                        <li>Enhanced visibility</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Premium Family</h3>
+                    <p class="price">$9.99<span class="price-period">/month</span></p>
+                    <ul>
+                        <li>Unlimited family members</li>
+                        <li>Advanced meal planning</li>
+                        <li>Priority support</li>
+                        <li>Enhanced features</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="security-section">
+        <div class="container">
+            <h2 class="section-title">Your Security is Our Priority</h2>
+            <div class="security-features">
+                <div class="security-item">
+                    <h4>🔐 End-to-End Encryption</h4>
+                    <p>HTTPS/TLS for all communications. AES-256-GCM for child accounts.</p>
+                </div>
+                <div class="security-item">
+                    <h4>🛡️ Secure Authentication</h4>
+                    <p>Firebase Authentication with secure token management. Passwords never stored in plain text.</p>
+                </div>
+                <div class="security-item">
+                    <h4>👶 COPPA Compliant</h4>
+                    <p>Special protections for children under 13. Parental consent required.</p>
+                </div>
+                <div class="security-item">
+                    <h4>🔒 PIN Protection</h4>
+                    <p>PBKDF2 hashing with 100,000 iterations. Credentials stored in iOS Keychain.</p>
+                </div>
+            </div>
+            <p style="margin-top: 40px; color: #666;">We never sell your data to third parties. Your privacy is protected.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="section" style="text-align: center;">
+            <h2 class="section-title">Perfect For</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Home Chefs</h3>
+                    <p>Turn your passion for cooking into a thriving side business from the comfort of your kitchen.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Food Enthusiasts</h3>
+                    <p>Discover authentic, homemade meals from talented local cooks in your community.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Busy Families</h3>
+                    <p>Simplify meal planning with collaborative tools that get everyone involved and excited about dinner.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer">
+        <p style="font-size: 1.2rem; margin-bottom: 20px;"><strong>Ready to get started?</strong></p>
+        <p>Download Porch Plates from the App Store</p>
+        <div class="footer-links">
+            <a href="PrivacyPolicy.html">Privacy Policy</a>
+            <a href="TermsAndConditions.html">Terms & Conditions</a>
+            <a href="Support.html">Support</a>
+            <a href="FAQ.html">FAQ</a>
+        </div>
+        <p style="margin-top: 30px; opacity: 0.8;">© 2025 Porch Plates. All rights reserved.</p>
+        <p style="opacity: 0.8;">Contact: <a href="mailto:porchplace@contentvaultmanager.com" style="color: white;">porchplace@contentvaultmanager.com</a></p>
+    </div>
+</body>
+</html>
